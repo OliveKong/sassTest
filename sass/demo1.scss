@@ -1,0 +1,18 @@
+
+$blue:#1875e7;
+div{
+	color:$blue;
+}
+$silde:left;
+.rounded{
+	border-top-#{$silde}-radius:5px;
+	background:#000; color:#fff;
+}
+ul li{
+	color:$blue;
+}
+$baseLineHeight:3;
+$baseLineHeight: 1.5 !default;
+body{
+	line-height:$baseLineHeight;
+}
