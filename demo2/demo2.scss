@@ -1,8 +1,14 @@
-
 $borderDirection: top !default;
 $baseFontSize: 12px !default;
 $baseLineHeight: 1.5 !default;
+$borderWidth:2px;
 /* used to class and proptypes */
-.border-#{$borderDirection}{
-    border-#{$borderDirection}:1px solid #ccc;
+.border-#{$borderDirection} {
+    border-#{$borderDirection}: 1px solid #ccc;
+}
+.border{
+    border: $borderWidth solid #ccc;
+}
+body {
+    font: #{$baseFontSize}/#{$baseLineHeight};
 }

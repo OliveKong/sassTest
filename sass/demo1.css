@@ -1,5 +1,5 @@
 div {
-  color: #1875e7; }
+  color: #B35151; }
 
 .rounded {
   border-top-left-radius: 5px;
@@ -7,7 +7,10 @@ div {
   color: #fff; }
 
 ul li {
-  color: #1875e7; }
+  color: #B35151; }
+
+dl {
+  color: #B35151; }
 
 body {
   line-height: 3; }
