@@ -1,0 +1,50 @@
+/*many value variable map type*/
+$headings:(h1:2em , h2:1.5em , h3:1.2em);
+@each $header,$size in $headings{ //$header for key;$size for value
+	#{$header}{
+		font-size:$size;
+	}
+}
+/*global variable*/
+$fontsize: 12px;
+$color:#333;
+body{
+	$fontsize:14px;
+	font-size:$fontsize;
+	$color:green !global;
+	color:$color;
+}
+p{
+	font-size:$fontsize;
+	color:$color;
+}
+/*nesting*/
+#topNav{
+	line-height:40px;
+	color:blue;
+	background:#f0f0f0;
+	li{
+		float:left;
+		padding:0 20px;
+	}
+	a{
+		display:block;
+		color:tan;
+		&:hover{
+			color:purple;
+		}
+	}
+}
+.fakeshadow{
+	border:{
+		style:solid;
+		left:{
+			width:4px;
+			color:green;
+		}
+		right:{
+			width:4px;
+			color:grey;
+		}
+	}
+}
