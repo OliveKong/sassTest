@@ -1,17 +1,18 @@
 /*many value variable map type*/
 $headings:(h1:2em , h2:1.5em , h3:1.2em);
-@each $header,$size in $headings{ //$header for key;$size for value
+@each $header,$size,$hcolor in $headings{ //$header for key;$size for value
 	#{$header}{
 		font-size:$size;
+		color:$hcolor;
 	}
 }
 /*global variable*/
-$fontsize: 12px;
-$color:#333;
+$fontsize: 14px;
+$color:#green;
 body{
 	$fontsize:14px;
 	font-size:$fontsize;
-	$color:green !global;
+	$color:#333 !global;
 	color:$color;
 }
 p{
@@ -24,7 +25,7 @@ p{
 	color:blue;
 	background:#f0f0f0;
 	li{
-		float:left;
+		// float:left;
 		padding:0 20px;
 	}
 	a{
@@ -45,6 +46,37 @@ p{
 		right:{
 			width:4px;
 			color:grey;
+		}
+	}
+}
+/*@root*/
+/*no jump out*/
+.parent1{
+	color:#f00;
+	.child{
+		width:100px;
+		background:#f0f0f0;
+	}
+}
+/* single selector jump out*/
+.parent2{
+	color:#ff0;
+	@at-root .child{
+		width:200px;
+		background:tan;
+	}
+}
+/*many selectors jump out*/
+.parent3{
+	background:#eee;
+	@at-root {
+		.child1{
+			width:300px;
+			background:#f0f;
+		}
+		.child2{
+			width:400px;
+			background:skyblue;
 		}
 	}
 }

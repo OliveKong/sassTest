@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>多值变量</title>
+	<title>变量</title>
 	<link rel="stylesheet" type="text/css" href="demo3.css">
 </head>
 <body>
+	<h2>多值变量</h2>
 	<!-- 多值变量分为list类型和map类型，简单来说list类型有点像js中的数组，而map类型有点像js中的对象。 -->
 
 	<!-- list数据可通过空格，逗号或小括号分隔多个值，可用nth($var,$index)取值。关于list数据操作还有很多其他函数如length($list)，join($list1,$list2,[$separator])，append($list,$value,[$separator])等，具体可参考sass Functions（搜索List Functions即可） -->
@@ -15,15 +16,15 @@
 	<h1>heading</h1>
 	<h2>heading</h2>
 	<h3>heading</h3>
-	<!-- 全局变量
-	在变量值后面加上!global即为全局变量。这个目前还用不上，不过将会在sass 3.4后的版本中正式应用。目前的sass变量范围饱受诟病，所以才有了这个全局变量。
+	 <h2>全局变量</h2>
+	<!--在变量值后面加上!global即为全局变量。这个目前还用不上，不过将会在sass 3.4后的版本中正式应用。目前的sass变量范围饱受诟病，所以才有了这个全局变量。
 	目前变量机制
 	在选择器中声明的变量会覆盖外面全局声明的变量。(这也就人们常说的sass没有局部变量) -->
 	<div>askdjfkasdjfkas</div>
 	<p>
 		skdfaskdjfksadj
 	</p>
-	<!-- 嵌套(Nesting) -->
+	<h2>嵌套(Nesting)</h2>
 	<!-- sass的嵌套包括两种：一种是选择器的嵌套；另一种是属性的嵌套。我们一般说起或用到的都是选择器的嵌套。 -->
 	<!-- 选择器嵌套
 	所谓选择器嵌套指的是在一个选择器中嵌套另一个选择器来实现继承，从而增强了sass文件的结构性和可读性。
@@ -35,8 +36,25 @@
 			<li class="fakeshadow">选择器嵌套</li>
 		</li>
 	</ul>
-	<!-- @at-root -->
-	<!-- sass3.3.0中新增的功能，用来跳出选择器嵌套的。默认所有的嵌套，继承所有上级选择器，但有了这个就可以跳出所有上级选择器。 -->
-	<!-- 普通跳出嵌套 -->
+	<h2>
+		@at-root<br>
+		sass3.3.0中新增的功能，用来跳出选择器嵌套的。默认所有的嵌套，继承所有上级选择器，但有了这个就可以跳出所有上级选择器。<br>
+		普通跳出嵌套<br>
+	</h2>
+	<div class="parent1">
+		父级
+		<p class="child">
+			子级，没有跳出
+		</p>
+	</div>
+	<div class="parent2">
+		父级
+		<p class="child">子级，单个选择器跳出</p>
+	</div>
+	<div class="parent3">
+		父级
+		<p class="child1">子级，多个选择器跳出</p>
+		<p class="child2">子级，多个选择器跳出</p>
+	</div>
 </body>
 </html>

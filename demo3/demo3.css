@@ -17,11 +17,11 @@ h3 {
 /*global variable*/
 body {
   font-size: 14px;
-  color: green; }
+  color: #333; }
 
 p {
-  font-size: 12px;
-  color: green; }
+  font-size: 14px;
+  color: #333; }
 
 /*nesting*/
 #topNav {
@@ -29,7 +29,6 @@ p {
   color: blue;
   background: #f0f0f0; }
   #topNav li {
-    float: left;
     padding: 0 20px; }
   #topNav a {
     display: block;
@@ -43,5 +42,31 @@ p {
   border-left-color: green;
   border-right-width: 4px;
   border-right-color: grey; }
+
+/*@root*/
+/*no jump out*/
+.parent1 {
+  color: #f00; }
+  .parent1 .child {
+    width: 100px;
+    background: #f0f0f0; }
+
+/* single selector jump out*/
+.parent2 {
+  color: #ff0; }
+  .child {
+    width: 200px;
+    background: tan; }
+
+/*many selectors jump out*/
+.parent3 {
+  background: #eee; }
+  .child1 {
+    width: 300px;
+    background: #f0f; }
+
+  .child2 {
+    width: 400px;
+    background: skyblue; }
 
 /*# sourceMappingURL=demo3.css.map */
