@@ -9,6 +9,7 @@ $borderWidth:2px;
 .border{
     border: $borderWidth solid #ccc;
 }
+p{line-height: $baseLineHeight}
 body {
     font: #{$baseFontSize}/#{$baseLineHeight};
 }
