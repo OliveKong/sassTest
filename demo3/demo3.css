@@ -53,7 +53,7 @@ p {
 
 /* single selector jump out*/
 .parent2 {
-  color: #ff0; }
+  color: peru; }
   .child {
     width: 200px;
     background: tan; }
@@ -63,7 +63,7 @@ p {
   background: #eee; }
   .child1 {
     width: 300px;
-    background: #f0f; }
+    background: seagreen; }
 
   .child2 {
     width: 400px;
