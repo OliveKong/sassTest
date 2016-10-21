@@ -61,6 +61,9 @@ p {
 /*many selectors jump out*/
 .parent3 {
   background: #eee; }
+  .parent3 .child3, .parent3 .child4 {
+    width: 400px;
+    background: yellowgreen; }
   .child1 {
     width: 300px;
     background: seagreen; }
@@ -68,5 +71,88 @@ p {
   .child2 {
     width: 400px;
     background: skyblue; }
+
+/*jump out media not jump out parent*/
+@media (max-width: 1000px) {
+  .parent3 {
+    background: #666;
+    color: #fff; } }
+  .parent3 .child4 {
+    width: 500px;
+    background: steelblue; }
+
+/*jump out media and jump out parent*/
+@media (max-width: 800px) {
+  .parent3 {
+    background: tomato;
+    color: #fff; } }
+  .child4 {
+    width: 600px;
+    background: seagreen; }
+
+/*@at-root and & uesed together*/
+.child4-1 {
+  width: 300px;
+  background: aquamarine; }
+  .parent4 .child4-1 {
+    width: 400px;
+    background: palegreen; }
+
+.demo1 {
+  width: 100px;
+  height: 100px;
+  background: palevioletred;
+  animation: motion 3s infinite alternate; }
+@keyframes motion {
+  form {
+    margin-left: 0; }
+  to {
+    margin-left: 200px; } }
+/*mixin*/
+.mixinDemo {
+  margin: 0 auto;
+  width: 200px;
+  height: 100px;
+  background: palegreen; }
+
+.opacity {
+  opacity: 0.5;
+  filter: alpha(opacity=50); }
+
+.opacity-80 {
+  opacity: 0.8;
+  filter: alpha(opacity=80); }
+
+/*many parameter mixin*/
+.imgtext-h li {
+  border-bottom: 1px solid #333;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.imgtext-h--product li {
+  border-bottom: 1px solid #333;
+  padding-top: 15px;
+  padding-bottom: 15px; }
+
+/*many group of parameter mixin */
+.box {
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 2px lime, 0 4px 4px red, 0 6px 6px blue;
+  -webkit-box-shadow: 0 2px 2px lime, 0 4px 4px red, 0 6px 6px blue; }
+
+/*@content*/
+@media only screen and (max-width: 680px) {
+  body {
+    background: papayawhip; } }
+/*@extend*/
+.extend, .extendH1 {
+  color: black;
+  background: palegreen;
+  border: 2px solid purple; }
+
+.extendH1 {
+  width: 400px;
+  height: 50px;
+  line-height: 50px; }
 
 /*# sourceMappingURL=demo3.css.map */

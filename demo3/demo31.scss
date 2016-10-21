@@ -69,6 +69,10 @@ p{
 /*many selectors jump out*/
 .parent3{
 	background:#eee;
+	.child3,.child4{
+		width:400px;
+		background:yellowgreen;
+	}
 	@at-root {
 		.child1{
 			width:300px;
@@ -79,4 +83,115 @@ p{
 			background:skyblue;
 		}
 	}
+}
+/*jump out media not jump out parent*/
+@media(max-width:1000px) {
+	.parent3{
+		background:#666;
+		color:#fff;
+		@at-root(without:media){
+			.child4{
+				width:500px;
+				background:steelblue;
+			}
+		}
+	}
+}
+/*jump out media and jump out parent*/
+@media (max-width:800px) {
+	.parent3{
+		background:tomato;
+		color:#fff;
+		@at-root(without:all){
+			.child4{
+				width:600px;
+				background:seagreen;
+			}
+		}
+	}
+}
+/*@at-root and & uesed together*/
+.child4-1{
+	width:300px;
+	background:aquamarine;
+	@at-root .parent4 &{
+		width:400px;
+		background:palegreen;
+	}
+}
+.demo1{
+	width:100px;
+	height:100px;
+	background:palevioletred;
+	animation:motion 3s infinite alternate;
+	@at-root{
+		@keyframes motion{
+			form{margin-left:0;}
+			to{	margin-left:200px;}
+		}
+	}
+}
+/*mixin*/
+@mixin center-block{
+	margin:0 auto;
+	width:200px;
+	height:100px;
+	background:palegreen;
+}
+.mixinDemo{
+	@include center-block;
+}
+@mixin opacity($opacity:50) {
+	opacity:$opacity / 100;
+	filter:alpha(opacity=$opacity);
+}
+.opacity{
+	@include opacity;//parameter use default value
+}
+.opacity-80{
+	@include opacity(80);//transmit parameter
+}
+/*many parameter mixin*/
+@mixin horizontal-line($border:1px solid #333,$padding:10px){
+	border-bottom:$border;
+	padding-top:$padding;
+	padding-bottom:$padding;
+}
+.imgtext-h li{
+	@include horizontal-line(1px solid #333);
+}
+.imgtext-h--product li{
+	@include horizontal-line($padding:15px);
+}
+/*many group of parameter mixin */
+@mixin box-shadow($shadow...) {
+	box-shadow:$shadow;
+	-webkit-box-shadow:$shadow;
+}
+.box{
+	border:1px solid #ccc;
+	@include box-shadow(0 2px 2px rgba(0,255,0,1),0 4px 4px rgba(255,0,0,1),0 6px 6px rgba(0,0,255,1));
+}
+/*@content*/
+@mixin max-screen($res) {
+	@media only screen and (max-width:$res){
+		@content;
+	}
+}
+@include max-screen(680px) {
+	body{
+		background:papayawhip;
+	}
+}
+/*@extend*/
+.extend{
+	color:black;
+	background:palegreen;
+	border:2px solid purple;
+}
+.extendH1{
+	@extend .extend;
+	width:400px;
+	height:50px;
+	line-height:50px;
 }
