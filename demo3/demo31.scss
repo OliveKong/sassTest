@@ -8,7 +8,7 @@ $headings:(h1:2em , h2:1.5em , h3:1.2em);
 }
 /*global variable*/
 $fontsize: 14px;
-$color:#green;
+$color:green;
 body{
 	$fontsize:14px;
 	font-size:$fontsize;
@@ -194,4 +194,32 @@ p{
 	width:400px;
 	height:50px;
 	line-height:50px;
+}
+%ir{
+	height:30px;
+	line-height:30px;
+	color:violet;
+	background:seashell;
+}
+%ir2{
+	color:tomato;
+}
+#content{
+	 h6{
+		@extend %ir;
+		width:300px;
+	}
+}
+/*@function*/
+$baseFontSize:10px;
+@function pxToRem($px) {
+	@return $px / $baseFontSize * 1rem;
+}
+.function,.function2{
+	font-size:pxToRem(40px);
+	// color:lighten($color, 10%);
+	color:lighten(nth($linkColor,1), 10%);
+}
+.function2{
+	color:darken(nth($linkColor,1), 20%);
 }
