@@ -223,3 +223,56 @@ $baseFontSize:10px;
 .function2{
 	color:darken(nth($linkColor,1), 20%);
 }
+/*@if*/
+$lte7: true;
+$type: monster;
+.ib{
+	display:inline-block;
+	@if $lte7 {
+		*display:inline;
+		*zoom:1;
+	}
+	padding:if(true, 10px, 20px);
+	margin:if(false, 10px, 20px)
+}
+.bgColor{
+	@if $type ==ocean{
+		color:blue;
+	} @else if $type == matador{
+		color:red;
+	} @else if $type == monster{
+		color:green;
+	} @else{
+		color:black;
+	}
+}
+/*@for*/
+@for $i from 1 through 3{
+	.item-#{$i} { width:8em * $i; background:tan;}
+}
+@for $i from 11 to 13{
+	.item-#{$i} { width:8em * ($i - 10); background:plum;}
+}
+/*@each*/
+$colorList: navy,aquamarine,violet,lavender;
+@each $wordColor in $colorList{
+	.#{$wordColor} {
+		color:$wordColor;
+		background:#666;
+	}
+}
+$color-data:(navy,black,default),(aquamarine,blue,pointer),(violet,purple,move);
+@each $colorli, $borderli, $cursorli in $color-data {
+	.#{$colorli}Color {
+		color:$colorli;
+		border:2px solid $borderli;
+		cursor:$cursorli;
+		background:#666;
+	}
+}
+$dl: (dt:2em,dd:3em);
+@each $tag, $size in $dl{
+	#{$tag}{
+		font-size:$size;
+	}
+}

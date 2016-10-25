@@ -172,4 +172,77 @@ p {
 .function2 {
   color: #004466; }
 
+/*@if*/
+.ib {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  padding: 10px;
+  margin: 20px; }
+
+.bgColor {
+  color: green; }
+
+/*@for*/
+.item-1 {
+  width: 8em;
+  background: tan; }
+
+.item-2 {
+  width: 16em;
+  background: tan; }
+
+.item-3 {
+  width: 24em;
+  background: tan; }
+
+.item-11 {
+  width: 8em;
+  background: plum; }
+
+.item-12 {
+  width: 16em;
+  background: plum; }
+
+/*@each*/
+.navy {
+  color: navy;
+  background: #666; }
+
+.aquamarine {
+  color: aquamarine;
+  background: #666; }
+
+.violet {
+  color: violet;
+  background: #666; }
+
+.lavender {
+  color: lavender;
+  background: #666; }
+
+.navyColor {
+  color: navy;
+  border: 2px solid black;
+  cursor: default;
+  background: #666; }
+
+.aquamarineColor {
+  color: aquamarine;
+  border: 2px solid blue;
+  cursor: pointer;
+  background: #666; }
+
+.violetColor {
+  color: violet;
+  border: 2px solid purple;
+  cursor: move;
+  background: #666; }
+
+dt {
+  font-size: 2em; }
+
+dd {
+  font-size: 3em; }
+
 /*# sourceMappingURL=demo3.css.map */

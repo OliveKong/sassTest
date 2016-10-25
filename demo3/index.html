@@ -53,7 +53,7 @@
 		<p class="child">子级，单个选择器跳出</p>
 	</div>
 	<div class="parent3">
-		父级
+		父级，宽度小于1000px的时候，背景颜色变成333，宽度小于800px的时候，背景颜色变成tomato，宽度小于680px的时候，body的背景颜色变成papayawhip
 		<p class="child1">子级，多个选择器跳出</p>
 		<p class="child2">子级，多个选择器跳出</p>
 		<p class="child3">子级，不跳出@media</p>
@@ -116,12 +116,64 @@
 	<h2>如上代码，定义了两个占位选择器%ir和%ir2，其中%ir2这个没有调用，所以解析出来的css样式也就没有ir2部分。占位选择器的出现，使css文件更加简练可控，没有多余。所以可以用其定义一些基础的样式文件，然后根据需要调用产生相应的css。
 	ps：在@media中暂时不能@extend @media外的代码片段，以后将会可以。</h2>
 	<h2>函数<br>
-	sass定义了很多函数可供使用，当然你也可以自己定义函数，以@fuction开始。sass的官方函数链接为：sass fuction，实际项目中我们使用最多的应该是颜色函数，而颜色函数中又以lighten减淡和darken加深为最，其调用方法为lighten($color,$amount)和darken($color,$amount)，它们的第一个参数都是颜色值，第二个参数都是百分比。</h2>
+	sass定义了很多函数可供使用，当然你也可以自己定义函数，以@function开始。sass的官方函数链接为：sass fuction，实际项目中我们使用最多的应该是颜色函数，而颜色函数中又以lighten减淡和darken加深为最，其调用方法为lighten($color,$amount)和darken($color,$amount)，它们的第一个参数都是颜色值，第二个参数都是百分比。</h2>
 	<div class="function">
 		sass函数方法
 	</div>
 	<div class="function2">
 		sass函数方法
 	</div>
+	<h2>运算<br>
+	sass具有运算的特性，可以对数值型的Value(如：数字、颜色、变量等)进行加减乘除四则运算。请注意运算符前后请留一个空格，不然会出错。</h2>
+	<h2>
+		条件判断及循环<br>
+		@if判断<br>
+		@if可一个条件单独使用，也可以和@else结合多条件使用
+	</h2>
+	<h2>
+	三目判断<br>
+	语法为：if($condition, $if_true, $if_false) 。三个参数分别表示：条件，条件为真的值，条件为假的值。
+	</h2>
+	<div class="ib">
+		只有@if的练习，自身为inline-block，当浏览器小于等于ie7的时候，则为inline，且zoom为1;也设置了三目运算符，当条件为真的时候padding:10px;条件为假成立时，margin：20px;
+		<p class="bgColor">@if @else的练习</p>
+	</div>
+	<h2>
+	for循环<br>
+	for循环有两种形式，分别为：@for $var from <start> through <end>和@for $var from <start> to <end>。$i表示变量，start表示起始值，end表示结束值，这两个的区别是关键字through表示包括end这个数，而to则不包括end这个数。
+	</h2>
+	<ul>
+		<li class="item-1">item-1，from through 方式</li>
+		<li class="item-2">item-2，from through 方式</li>
+		<li class="item-3">item-3，from through 方式</li>
+	</ul>
+	<ul>
+		<li class="item-11">item-11，from to 方式</li>
+		<li class="item-12">item-12，from to 方式</li>
+		<li class="item-13">item-13，from to 方式</li>
+	</ul>
+	<h2>
+	@each循环<br>
+	语法为：@each $var in <list or map>。其中$var表示变量，而list和map表示list类型数据和map类型数据。sass 3.3.0新加入了多字段循环和map数据循环。</h2>
+	<h2>
+		单个字段list数据循环
+	</h2>
+	<ul>
+		<li class="navy">navy 字体颜色,背景颜色都是#666</li>
+		<li class="aquamarine">aquamarine 字体颜色,背景颜色都是#666</li>
+		<li class="violet">violet 字体颜色,背景颜色都是#666</li>
+		<li class="lavender">lavender 字体颜色,背景颜色都是#666</li>
+	</ul>
+	<h2>多个字段list数据循环</h2>
+	<ul>
+		<li class="navyColor">navy 字体颜色,背景颜色都是#666,两像素边框，指针类型为指针型</li>
+		<li class="aquamarineColor">aquamarine 字体颜色,背景颜色都是#666,两像素边框，指针类型为小手型</li>
+		<li class="violetColor">violet 字体颜色,背景颜色都是#666,两像素边框，指针类型为十字可移动形</li>
+	</ul>
+	<h2>多个字段map数据循环</h2>
+	<dl>
+		<dt>字体大小2em</dt>
+		<dd>字体大小3em</dd>
+	</dl>
 </body>
 </html>
