@@ -253,7 +253,7 @@ $type: monster;
 @for $i from 11 to 13{
 	.item-#{$i} { width:8em * ($i - 10); background:plum;}
 }
-/*@each*/
+/*@each list*/
 $colorList: navy,aquamarine,violet,lavender;
 @each $wordColor in $colorList{
 	.#{$wordColor} {
@@ -261,6 +261,7 @@ $colorList: navy,aquamarine,violet,lavender;
 		background:#666;
 	}
 }
+/*@each many list*/
 $color-data:(navy,black,default),(aquamarine,blue,pointer),(violet,purple,move);
 @each $colorli, $borderli, $cursorli in $color-data {
 	.#{$colorli}Color {
@@ -270,6 +271,7 @@ $color-data:(navy,black,default),(aquamarine,blue,pointer),(violet,purple,move);
 		background:#666;
 	}
 }
+/*@each map*/
 $dl: (dt:2em,dd:3em);
 @each $tag, $size in $dl{
 	#{$tag}{
