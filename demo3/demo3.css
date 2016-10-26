@@ -1,222 +1,176 @@
 /*many value variable list type*/
 a {
-  color: #08c;
-}
-a:hover {
-  color: #333;
-}
+  color: #08c; }
+  a:hover {
+    color: #333; }
 
 /*many value variable map type*/
 h1 {
-  font-size: 2em;
-}
+  font-size: 2em; }
 
 h2 {
-  font-size: 1.5em;
-}
+  font-size: 1.5em; }
 
 h3 {
-  font-size: 1.2em;
-}
+  font-size: 1.2em; }
 
 /*global variable*/
 body {
   font-size: 14px;
-  color: #333;
-}
+  color: #333; }
 
 p {
   font-size: 14px;
-  color: #333;
-}
+  color: #333; }
 
 /*nesting*/
 #topNav {
   line-height: 40px;
   color: blue;
-  background: #f0f0f0;
-}
-#topNav li {
-  padding: 0 20px;
-}
-#topNav a {
-  display: block;
-  color: tan;
-}
-#topNav a:hover {
-  color: purple;
-}
+  background: #f0f0f0; }
+  #topNav li {
+    padding: 0 20px; }
+  #topNav a {
+    display: block;
+    color: tan; }
+    #topNav a:hover {
+      color: purple; }
 
 .fakeshadow {
   border-style: solid;
   border-left-width: 4px;
   border-left-color: green;
   border-right-width: 4px;
-  border-right-color: grey;
-}
+  border-right-color: grey; }
 
 /*@root*/
 /*no jump out*/
 .parent1 {
-  color: #f00;
-}
-.parent1 .child {
-  width: 100px;
-  background: #f0f0f0;
-}
+  color: #f00; }
+  .parent1 .child {
+    width: 100px;
+    background: #f0f0f0; }
 
 /* single selector jump out*/
 .parent2 {
-  color: peru;
-}
-.child {
-  width: 200px;
-  background: tan;
-}
+  color: peru; }
+  .child {
+    width: 200px;
+    background: tan; }
 
 /*many selectors jump out*/
 .parent3 {
-  background: #eee;
-}
-.parent3 .child3, .parent3 .child4 {
-  width: 400px;
-  background: yellowgreen;
-}
-.child1 {
-  width: 300px;
-  background: seagreen;
-}
+  background: #eee; }
+  .parent3 .child3, .parent3 .child4 {
+    width: 400px;
+    background: yellowgreen; }
+  .child1 {
+    width: 300px;
+    background: seagreen; }
 
-.child2 {
-  width: 400px;
-  background: skyblue;
-}
+  .child2 {
+    width: 400px;
+    background: skyblue; }
 
 /*jump out media not jump out parent*/
 @media (max-width: 1000px) {
   .parent3 {
     background: #666;
-    color: #fff;
-  }
-}
-.parent3 .child4 {
-  width: 500px;
-  background: steelblue;
-}
+    color: #fff; } }
+  .parent3 .child4 {
+    width: 500px;
+    background: steelblue; }
 
 /*jump out media and jump out parent*/
 @media (max-width: 800px) {
   .parent3 {
     background: tomato;
-    color: #fff;
-  }
-}
-.child4 {
-  width: 600px;
-  background: seagreen;
-}
+    color: #fff; } }
+  .child4 {
+    width: 600px;
+    background: seagreen; }
 
 /*@at-root and & uesed together*/
 .child4-1 {
   width: 300px;
-  background: aquamarine;
-}
-.parent4 .child4-1 {
-  width: 400px;
-  background: palegreen;
-}
+  background: aquamarine; }
+  .parent4 .child4-1 {
+    width: 400px;
+    background: palegreen; }
 
 .demo1 {
   width: 100px;
   height: 100px;
   background: palevioletred;
-  animation: motion 3s infinite alternate;
-}
+  animation: motion 3s infinite alternate; }
 @keyframes motion {
   form {
-    margin-left: 0;
-  }
+    margin-left: 0; }
   to {
-    margin-left: 200px;
-  }
-}
+    margin-left: 200px; } }
 /*mixin*/
 .mixinDemo {
   margin: 0 auto;
   width: 200px;
   height: 100px;
-  background: palegreen;
-}
+  background: palegreen; }
 
 .opacity {
   opacity: 0.5;
-  filter: alpha(opacity=50);
-}
+  filter: alpha(opacity=50); }
 
 .opacity-80 {
   opacity: 0.8;
-  filter: alpha(opacity=80);
-}
+  filter: alpha(opacity=80); }
 
 /*many parameter mixin*/
 .imgtext-h li {
   border-bottom: 1px solid #333;
   padding-top: 10px;
-  padding-bottom: 10px;
-}
+  padding-bottom: 10px; }
 
 .imgtext-h--product li {
   border-bottom: 1px solid #333;
   padding-top: 15px;
-  padding-bottom: 15px;
-}
+  padding-bottom: 15px; }
 
 /*many group of parameter mixin */
 .box {
   border: 1px solid #ccc;
   box-shadow: 0 2px 2px lime, 0 4px 4px red, 0 6px 6px blue;
-  -webkit-box-shadow: 0 2px 2px lime, 0 4px 4px red, 0 6px 6px blue;
-}
+  -webkit-box-shadow: 0 2px 2px lime, 0 4px 4px red, 0 6px 6px blue; }
 
 /*@content*/
 @media only screen and (max-width: 680px) {
   body {
-    background: papayawhip;
-  }
-}
+    background: papayawhip; } }
 /*@extend*/
 .extend, .extendH1 {
   color: black;
   background: palegreen;
-  border: 2px solid purple;
-}
+  border: 2px solid purple; }
 
 .extendH1 {
   width: 400px;
   height: 50px;
-  line-height: 50px;
-}
+  line-height: 50px; }
 
 #content h6 {
   height: 30px;
   line-height: 30px;
   color: violet;
-  background: seashell;
-}
+  background: seashell; }
 
 #content h6 {
-  width: 300px;
-}
+  width: 300px; }
 
 /*@function*/
 .function, .function2 {
   font-size: 4rem;
-  color: #00aaff;
-}
+  color: #00aaff; }
 
 .function2 {
-  color: #004466;
-}
+  color: #004466; }
 
 /*@if*/
 .ib {
@@ -224,87 +178,73 @@ p {
   *display: inline;
   *zoom: 1;
   padding: 10px;
-  margin: 20px;
-}
+  margin: 20px; }
 
 .bgColor {
-  color: green;
-}
+  color: green; }
 
 /*@for*/
 .item-1 {
   width: 8em;
-  background: tan;
-}
+  background: tan; }
 
 .item-2 {
   width: 16em;
-  background: tan;
-}
+  background: tan; }
 
 .item-3 {
   width: 24em;
-  background: tan;
-}
+  background: tan; }
 
 .item-11 {
   width: 8em;
-  background: plum;
-}
+  background: plum; }
 
 .item-12 {
   width: 16em;
-  background: plum;
-}
+  background: plum; }
 
-/*@each*/
+/*@each list*/
 .navy {
   color: navy;
-  background: #666;
-}
+  background: #666; }
 
 .aquamarine {
   color: aquamarine;
-  background: #666;
-}
+  background: #666; }
 
 .violet {
   color: violet;
-  background: #666;
-}
+  background: #666; }
 
 .lavender {
   color: lavender;
-  background: #666;
-}
+  background: #666; }
 
+/*@each many list*/
 .navyColor {
   color: navy;
   border: 2px solid black;
   cursor: default;
-  background: #666;
-}
+  background: #666; }
 
 .aquamarineColor {
   color: aquamarine;
   border: 2px solid blue;
   cursor: pointer;
-  background: #666;
-}
+  background: #666; }
 
 .violetColor {
   color: violet;
   border: 2px solid purple;
   cursor: move;
-  background: #666;
-}
+  background: #666; }
 
+/*@each map*/
 dt {
-  font-size: 2em;
-}
+  font-size: 2em; }
 
 dd {
-  font-size: 3em;
-}
+  font-size: 3em; }
 
 /*# sourceMappingURL=demo3.css.map */
