@@ -278,3 +278,20 @@ $dl: (dt:2em,dd:3em);
 		font-size:$size;
 	}
 }
+
+/*grid for*/
+$grid-prefix:item !default;
+$grid-width:60px !default;
+$grid-gutter:20px !default;
+%grid{
+	float:left;
+	margin:$grid-gutter / 2;
+	height:30px;
+	background:tan;
+}
+@for $i from 1 through 12{
+	.#{$grid-prefix}#{$i}{
+		width:$grid-width * $i + $grid-gutter * ($i - 1);
+		@extend %grid;
+	}
+}
