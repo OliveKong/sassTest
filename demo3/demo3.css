@@ -6,6 +6,23 @@ a:hover {
   color: #333;
 }
 
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}
+
 /*many value variable map type*/
 h1 {
   font-size: 2em;
@@ -363,6 +380,25 @@ dd {
 
 .item12 {
   width: 940px;
+}
+
+/*@each test*/
+.animalGroup .photo-lion {
+  background: url("../img/lion.jpg") no-repeat 0 0;
+}
+.animalGroup .photo-pig {
+  background: url("../img/pig.jpg") no-repeat 0 0;
+}
+.animalGroup .photo-fawn {
+  background: url("../img/fawn.jpg") no-repeat 0 0;
+}
+.animalGroup .photo-monkey {
+  background: url("../img/monkey.jpg") no-repeat 0 0;
+}
+.animalGroup div {
+  float: left;
+  width: 350px;
+  height: 350px;
 }
 
 /*# sourceMappingURL=demo3.css.map */

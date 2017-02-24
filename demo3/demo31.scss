@@ -295,3 +295,20 @@ $grid-gutter:20px !default;
 		@extend %grid;
 	}
 }
+/*@each test*/
+$animallist:lion pig fawn monkey;
+@mixin animal-pic{
+	@each $animal in $animallist{
+		.photo-#{$animal}{
+			background: url("../img/#{$animal}.jpg") no-repeat 0 0;
+		}
+	}
+}
+.animalGroup{
+	@include animal-pic;
+	div{
+		float: left;
+		width: 350px;
+		height: 350px;
+	}
+}
