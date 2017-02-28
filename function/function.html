@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>sass 函数</title>
+	<link rel="stylesheet" type="text/css" href="function.css">
+</head>
+<body>
+	<div>
+		<h3>字符串函数</h3>
+		<div>
+			<h4>去除引号：unquote(),只能去掉最外层的单引号或者双引号。</h4>
+			<div class="unquoteDiv"></div>
+		</div>
+		<div>
+			<h4>添加引号：quote(),使用 quote() 函数只能给字符串增加双引号，而且字符串中间有单引号或者空格时，需要用单引号或双引号括起，否则编译的时候将会报错。</h4>
+			<div class="quoteDiv"></div>
+		</div>
+		<div>
+			<h4>大写函数：to-upper-case()。to-upper-case() 函数将字符串小写字母转换成大写字母</h4>
+			<div class="uppercase"></div>
+			<div class="uppercase2"></div>
+		</div>
+		<div>
+			<h4>小写函数：to-lower-case()。to-upper-case() 函数将字符串大写字母转换成小写字母</h4>
+			<div class="lowercase"></div>
+			<div class="lowercase2"></div>
+		</div>
+		<h3>数字函数</h3>
+		<div>
+			<h4> percentage($value)：将一个不带单位的数转换成百分比值</h4>
+			<p>
+				>> percentage(.2)<br>
+				20%<br>
+				>> percentage(2px / 10px)<br>
+				20%<br>
+				>> percentage(2em / 10em)<br>
+				20%<br>
+				>><br>
+			</p>
+			<div class="percentage"></div>
+		</div>
+		<div>
+			<h4>round() 函数可以将一个数四舍五入为一个最接近的整数</h4>
+			<p>
+				>> round(12.3)<br>
+				12<br>
+				>> round(12.5)<br>
+				13<br>
+				>> round(1.49999)<br>
+				1<br>
+				>> round(2.0)<br>
+				2<br>
+				>> round(20%)<br>
+				20%<br>
+				>> round(2.2%)<br>
+				2%<br>
+				>> round(3.9em)<br>
+				4em<br>
+				>> round(2.3px)<br>
+				2px<br>
+				>> round(2px / 3px)<br>
+				1<br>
+				>> round(1px / 3px)<br>
+				0<br>
+				>> round(3px / 2em)<br>
+				2px/em<br>
+			</p>
+			<p>在round() 函数中可以携带单位的任何数值。</p>
+			<div class="round"></div>
+			<div class="round2"></div>
+		</div>
+		<div>
+			<h4>数字函数-ceil()函数</h4>
+			<p>
+				ceil() 函数将一个数转换成最接近于自己的整数，会将一个大于自身的任何小数转换成大于本身 1 的整数。也就是只做入，不做舍的计算：
+			</p>
+			<p>
+				>> ceil(2.0)<br>
+				2<br>
+				>> ceil(2.1)<br>
+				3<br>
+				>> ceil(2.6)<br>
+				3<br>
+				>> ceil(2.3%)<br>
+				3%<br>
+				>> ceil(2.3px)<br>
+				3px<br>
+				>> ceil(2.5px)<br>
+				3px<br>
+				>> ceil(2px / 3px)<br>
+				1<br>
+				>> ceil(2% / 3px)<br>
+				1%/px<br>
+				>> ceil(1em / 5px)<br>
+				1em/px<br>
+			</p>
+			<div class="ceil"></div>
+			<div class="ceil2"></div>
+		</div>
+		<div>
+			<h4>数字函数-floor()函数</h4>
+			<p>floor() 函数刚好与 ceil() 函数功能相反，其主要将一个数去除其小数部分，并且不做任何的进位。也就是只做舍，不做入的计算：</p>
+			<p>
+				>> floor(2.1)<br>
+				2<br>
+				>> floor(2.5)<br>
+				2<br>
+				>> floor(3.5%)<br>
+				3%<br>
+				>> floor(10.2px)<br>
+				10px<br>
+				>> floor(10.8em)<br>
+				10em<br>
+				>> floor(2px / 10px)<br>
+				0<br>
+				>> floor(3px / 1em)<br>
+				3px/em<br>
+			</p>
+			<div class="floor"></div>
+		</div>
+		<div>
+			<h4>数字函数-abs()函数</h4>
+			<p>
+				>> abs(10)<br>
+				10<br>
+				>> abs(-10)<br>
+				10<br>
+				>> abs(-10px)<br>
+				10px<br>
+				>> abs(-2em)<br>
+				2em<br>
+				>> abs(-.5%)<br>
+				0.5%<br>
+				>> abs(-1px / 2px)<br>
+				0.5<br>
+			</p>
+			<div class="abs"></div>
+		</div>
+		<div>
+			<h4>数字函数-min()函数、max()函数</h4>
+			<h4>min()函数,min()函数功能主要是在多个数之中找到最小的一个，这个函数可以设置任意多个参数：</h4>
+			<p>
+				>> min(1,2,1%,3,300%)<br>
+				1%<br>
+				>> min(1px,2,3px)<br>
+				1px<br>
+				>> min(1em,2em,6em)<br>
+				1em<br>
+			</p>
+			<p>不过在 min() 函数中同时出现两种不同类型的单位，将会报错误信息</p>
+			<h4>max()函数,max() 函数和 min() 函数一样，不同的是，max() 函数用来获取一系列数中的最大那个值：</h4>
+			<p>
+				>> max(1,5)<br>
+				5<br>
+				>> max(1px,5px)<br>
+				5px<br>
+			</p>
+			<p>同样的，如果在 max() 函数中有不同单位，将会报错：</p>
+			<div class="min"></div>
+			<div class="max"></div>
+		</div>
+	</div>
+	<div>
+		<h3>列表函数</h3>
+		<p>列表函数主要包括一些对列表参数的函数使用，主要包括以下几种：</p>
+		<div>
+			<h3>length($list)：返回一个列表的长度值</h3>
+			<h3>nth($list, $n)：返回一个列表中指定的某个标签值</h3>
+			<h3>join($list1, $list2, [$separator])：将两个列给连接在一起，变成一个列表；</h3>
+			<h3>append($list1, $val, [$separator])：将某个值放在列表的最后；</h3>
+			<h3>zip($lists…)：将几个列表结合成一个多维的列表；</h3>
+			<h3>index($list, $value)：返回一个值在列表中的位置值。</h3>
+		</div>
+	</div>
+</body>
+</html>

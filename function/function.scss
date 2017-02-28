@@ -1,0 +1,66 @@
+.unquoteDiv{
+	&:after{
+		content:unquote('"I miss you"');
+	}
+}
+.quoteDiv{
+	&:after{
+		content:quote("I miss you,too!");
+		// content:quote(I-miss-you-too);
+	}
+}
+.uppercase{
+	&:after{
+		content:quote(to-upper-case("olivekong"));
+	}
+}
+.uppercase2{
+	&:after{
+		content:quote(to-upper-case(olive-kong));
+	}
+}
+.lowercase{
+	&:after{
+		content:quote(to-lower-case("OLIVEKONG"));
+	}
+}
+.lowercase2{
+	&:after{
+		content:quote(to-lower-case(OLIVE-KONG));
+	}
+}
+.percentage{
+	width:percentage(0.8);
+	height:20px;
+	background:tomato;
+}
+.round{
+	width:round(80.3px);
+	height:20px;
+	background:chocolate;
+}
+.round2{
+	width:round(20em);
+	height:20px;
+	background:olive;
+}
+.ceil{
+	width:ceil(112.3px);
+	height:20px;
+	background:olive;
+}
+.ceil2{
+	width:ceil(20.8em);
+	height:20px;
+	background:tan;
+}
+.floor{
+	width:floor(20.8em);
+	height:20px;
+	background:tomato;
+}
+.abs{
+	width:abs(-200px);
+	height:20px;
+	background:olive;
+}

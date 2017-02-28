@@ -1,0 +1,67 @@
+.unquoteDiv:after {
+  content: "I miss you";
+}
+
+.quoteDiv:after {
+  content: "I miss you,too!";
+}
+
+.uppercase:after {
+  content: "OLIVEKONG";
+}
+
+.uppercase2:after {
+  content: "OLIVE-KONG";
+}
+
+.lowercase:after {
+  content: "olivekong";
+}
+
+.lowercase2:after {
+  content: "olive-kong";
+}
+
+.percentage {
+  width: 80%;
+  height: 20px;
+  background: tomato;
+}
+
+.round {
+  width: 80px;
+  height: 20px;
+  background: chocolate;
+}
+
+.round2 {
+  width: 20em;
+  height: 20px;
+  background: olive;
+}
+
+.ceil {
+  width: 113px;
+  height: 20px;
+  background: olive;
+}
+
+.ceil2 {
+  width: 21em;
+  height: 20px;
+  background: tan;
+}
+
+.floor {
+  width: 20em;
+  height: 20px;
+  background: tomato;
+}
+
+.abs {
+  width: 200px;
+  height: 20px;
+  background: olive;
+}
+
+/*# sourceMappingURL=function.css.map */
